@@ -14,6 +14,7 @@ def dllist():
 		return ls
 	else:
 		print('dllist.txt 不在目录下')
+		input('输入任意字符退出')
 
 def dl(input_list):
 	# read list of list
@@ -25,7 +26,7 @@ def dl(input_list):
 				print('检查链接' + url)
 				# If page is available
 				print('HTML Status:' + str(rq.urlopen(url).status))
-				print('正在下载' + fname + 'part' + str(j) + '请等待...')
+				print('正在下载' + fname + 'part' + str(j) + '，请等待...')
 				sourcefile = requests.get(url)
 				with open(fname+"_"+str(j)+".mp4","wb") as dl_file:
 					dl_file.write(sourcefile.content)
@@ -35,12 +36,14 @@ def dl(input_list):
 				break
 
 def main():
-	print('Author: 风逝无殇')
+	print('Author: 风逝无殇（落羽惊云)')
 	print('作者很懒，不想写图形界面也不想写下载进度条\n')
 	ipt=input('确认开始下载？开始请按Y(大小写无所谓)，不想开始请按其他随便什么乱七八糟的: ')
 	if(ipt=='Y' or ipt=='y'):
 		dl(dllist())
 		print('全部视频资源下载完成')
+		input('输入任意字符结束')
 	else:
 		print('byebye~')
+		input('输入任意字符结束')
 main()
