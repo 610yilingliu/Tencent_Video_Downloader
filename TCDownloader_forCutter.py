@@ -14,7 +14,7 @@ def dllist():
 		return ls
 	else:
 		print('dllist.txt 不在目录下')
-		input('输入任意字符退出')
+		input('按enter退出')
 
 def dl(input_list):
 	# read list of list
@@ -42,8 +42,8 @@ def main():
 	if(ipt=='Y' or ipt=='y'):
 		dl(dllist())
 		print('全部视频资源下载完成')
-		input('输入任意字符结束')
+		input('按enter结束')
 	else:
 		print('byebye~')
-		input('输入任意字符结束')
+		input('按enter结束')
 main()
